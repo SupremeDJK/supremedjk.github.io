@@ -1,0 +1,8 @@
+baseURL = 'https://supremedjk.github.io/' # ⚠️ 注意：稍后上线时这里要改成你的真实域名
+languageCode = 'zh-cn'
+title = '我的博客'
+theme = 'PaperMod'
+
+[params]
+  author = "嘟嘟嘟"
+  defaultTheme = "auto" # 自动跟随系统深色/浅色模式

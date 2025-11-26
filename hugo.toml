@@ -1,8 +1,144 @@
-baseURL = 'https://supremedjk.github.io/' # ⚠️ 注意：稍后上线时这里要改成你的真实域名
+baseURL = 'https://supremedjk.github.io/'
 languageCode = 'zh-cn'
-title = '我的博客'
-theme = 'PaperMod'
+title = '我的个人主页'
+theme = 'hugo-profile'
 
+# ⚠️ 关键设置：分页大小
+[pagination]
+    pagerSize = 3
+
+# -----------------------------------------------------------
+# 核心参数设置 (这里控制 Demo 里的各个板块)
+# -----------------------------------------------------------
 [params]
-  author = "嘟嘟嘟"
-  defaultTheme = "auto" # 自动跟随系统深色/浅色模式
+    # 1. 首页 Hero (个人信息) 板块
+    # ---------------------------
+    title = "你好，我是嘟嘟嘟"
+    subtitle = "Java 后端开发工程师 / Spring 专家"
+    description = "热衷于探索云原生架构，拥有5年 Java 开发经验。喜欢写博客，记录技术与生活。"
+    
+    # 头像设置
+    avatar = true
+    avatarURL = "/images/avatar.png"  # 确保 static/images/ 目录下有这个文件
+
+    # 2. 侧边栏/导航栏设置
+    # -------------------
+    logo = true
+    logoText = "嘟嘟嘟的博客"
+    enableSearch = true        # 开启搜索
+    enableReadingTime = true   # 显示阅读时间
+    
+    # 3. 关于我 (About) 板块
+    # ---------------------
+    [params.about]
+        enable = true
+        title = "关于我"
+        content = "我是一名专注于高并发系统设计的后端工程师。我熟悉 Spring Boot, Kubernetes 以及微服务架构。在工作之余，我也是一名开源爱好者。"
+
+    # 4. 技能栈 (Skills) 板块
+    # ----------------------
+    [params.skills]
+        enable = true
+        title = "技术栈"
+        [[params.skills.items]]
+            name = "Java / Spring Boot"
+            value = 90  # 熟练度百分比
+        [[params.skills.items]]
+            name = "MySQL / Redis"
+            value = 85
+        [[params.skills.items]]
+            name = "Docker / K8s"
+            value = 70
+        [[params.skills.items]]
+            name = "Hugo / Git"
+            value = 80
+
+    # 5. 工作经历 (Experience) 板块
+    # ----------------------------
+    [params.experience]
+        enable = true
+        title = "工作经历"
+        
+        [[params.experience.items]]
+            title = "高级后端工程师"
+            company = "某互联网大厂"
+            duration = "2023 - 至今"
+            description = "负责亿级流量的核心交易系统研发，主导了微服务拆分与性能优化。"
+            
+        [[params.experience.items]]
+            title = "Java 开发工程师"
+            company = "某初创科技公司"
+            duration = "2020 - 2023"
+            description = "从零搭建了公司早期的支付网关，支持多种支付渠道接入。"
+
+    # 6. 项目展示 (Projects) 板块
+    # --------------------------
+    [params.projects]
+        enable = true
+        title = "个人项目"
+        
+        [[params.projects.items]]
+            title = "我的博客系统"
+            description = "基于 Hugo 和 Github Pages 搭建的自动化博客平台。"
+            image = "/images/project.png" # 这里的图片放 static/images/ 下
+            link = "https://github.com/supremedjk"
+            badges = ["Hugo", "Github Actions"]
+
+    # 7. 社交链接 (Social)
+    # -------------------
+    [[params.social]]
+        name = "Github"
+        icon = "github"
+        url = "https://github.com/supremedjk"
+    
+    [[params.social]]
+        name = "Email"
+        icon = "mail"
+        url = "mailto:djk951221@163.com"
+
+    # 8. 联系我 (Contact) 板块
+    # -----------------------
+    [params.contact]
+        enable = true
+        title = "联系我"
+        email = "djk951221@163.com"
+        btnName = "发送邮件"
+
+# -----------------------------------------------------------
+# 顶部导航菜单 (点击可跳转到页面对应位置)
+# -----------------------------------------------------------
+[[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/#root"  # 这里的 #root 会让页面滚动到顶部
+    weight = 1
+
+[[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/#about" # 跳转到 About 板块
+    weight = 2
+
+[[menu.main]]
+    identifier = "skills"
+    name = "技能"
+    url = "/#skills"
+    weight = 3
+
+[[menu.main]]
+    identifier = "experience"
+    name = "经历"
+    url = "/#experience"
+    weight = 4
+
+[[menu.main]]
+    identifier = "projects"
+    name = "项目"
+    url = "/#projects"
+    weight = 5
+
+[[menu.main]]
+    identifier = "posts"
+    name = "博客"
+    url = "/posts" # 这个是单独的博客列表页
+    weight = 6

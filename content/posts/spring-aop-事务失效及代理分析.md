@@ -2,6 +2,8 @@
 title = 'Spring Aop 事务失效及代理分析'
 date = 2025-11-26T20:20:57+08:00
 draft = true
+tags = ['Spring', 'AOP', '事务', 'Java']
+categories = ['后端开发']
 +++
 
 # Spring AOP 事务失效与底层代理机制深度总结

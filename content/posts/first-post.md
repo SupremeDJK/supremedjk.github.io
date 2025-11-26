@@ -2,6 +2,8 @@
 title = 'First Post'
 date = 2025-11-26T19:51:00+08:00
 draft = false
+tags = []
+categories = []
 +++
 
 # 测试
